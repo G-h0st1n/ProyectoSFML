@@ -1,71 +1,69 @@
 #include <SFML/Graphics.hpp>
-#include <iostream>
+#include "SearchMenu.h"
+#include "SortMenu.h"
 
-using namespace sf;
-using namespace std;
-
-int main()
-{
+int main() {
     // Crear ventana
-    RenderWindow window(VideoMode(800, 600), "Prueba de Fuente y Menu Interactivo");
+    sf::RenderWindow window(sf::VideoMode(800, 600), "Proyecto de Algoritmos", sf::Style::Close);
+    window.setFramerateLimit(60);
 
-    // Cargar la fuente
-    Font font;
-    if (!font.loadFromFile("C:\\Users\\frpat\\Fonts\\Tr2n.ttf"))
-    {
-        cerr << "Error: No se pudo cargar la fuente Tr2n.ttf" << endl;
-        return EXIT_FAILURE;
+    // Cargar fuente
+    sf::Font font;
+    if (!font.loadFromFile("C:\\Users\\frpat\\Fonts\\Tr2n.ttf")) {
+        return -1; // Salir si no se puede cargar la fuente
     }
 
-    // Crear opciones del menú
-    const int MENU_ITEMS = 3;
-    Text menu[MENU_ITEMS];
-    string menuStrings[MENU_ITEMS] = {"Opcion 1", "Opcion 2", "Opcion 3"};
+    // Crear textos para el menú principal
+    sf::Text searchOption("Algoritmos de Busqueda", font, 30);
+    sf::Text sortOption("Algoritmos de Ordenamiento", font, 30);
+    sf::Text exitOption("Salir", font, 30);
 
-    for (int i = 0; i < MENU_ITEMS; i++)
-    {
-        menu[i].setFont(font);
-        menu[i].setString(menuStrings[i]);
-        menu[i].setCharacterSize(36); // Tamaño del texto
-        menu[i].setFillColor(Color::Green); // Color base
-        menu[i].setPosition(300, 200 + i * 50); // Posición en la pantalla
-    }
+    // Posicionar las opciones
+    searchOption.setPosition(100.f, 100.f);
+    sortOption.setPosition(100.f, 150.f);
+    exitOption.setPosition(100.f, 200.f);
 
-    // Bucle principal
-    while (window.isOpen())
-    {
-        Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == Event::Closed)
-            {
+    // Colores iniciales
+    searchOption.setFillColor(sf::Color::Green);
+    sortOption.setFillColor(sf::Color::Green);
+    exitOption.setFillColor(sf::Color::Green);
+
+    sf::Vector2f mousePosition;
+
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed)
                 window.close();
+
+            if (event.type == sf::Event::MouseMoved) {
+                mousePosition = sf::Vector2f(sf::Mouse::getPosition(window));
+
+                // Cambiar color al pasar el ratón
+                searchOption.setFillColor(searchOption.getGlobalBounds().contains(mousePosition) ? sf::Color::Red : sf::Color::Green);
+                sortOption.setFillColor(sortOption.getGlobalBounds().contains(mousePosition) ? sf::Color::Red : sf::Color::Green);
+                exitOption.setFillColor(exitOption.getGlobalBounds().contains(mousePosition) ? sf::Color::Red : sf::Color::Green);
+            }
+
+            if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
+                // Verificar qué opción fue seleccionada
+                if (searchOption.getGlobalBounds().contains(mousePosition)) {
+                    searchMenu(window, font); // Llamar al submenú de búsqueda
+                } else if (sortOption.getGlobalBounds().contains(mousePosition)) {
+                    sortMenu(window, font); // Llamar al submenú de ordenamiento
+                } else if (exitOption.getGlobalBounds().contains(mousePosition)) {
+                    window.close(); // Salir del programa
+                }
             }
         }
 
-        // Detectar si el mouse está sobre una opción
-        Vector2i mousePos = Mouse::getPosition(window);
-        for (int i = 0; i < MENU_ITEMS; i++)
-        {
-            FloatRect bounds = menu[i].getGlobalBounds();
-            if (bounds.contains(static_cast<float>(mousePos.x), static_cast<float>(mousePos.y)))
-            {
-                menu[i].setFillColor(Color::Red); // Cambia a rojo si está sobre
-            }
-            else
-            {
-                menu[i].setFillColor(Color::Green); // Vuelve a verde si no está sobre
-            }
-        }
-
-        // Renderizar
-        window.clear(Color::Black); // Fondo negro
-        for (int i = 0; i < MENU_ITEMS; i++)
-        {
-            window.draw(menu[i]);
-        }
+        // Dibujar el menú principal
+        window.clear(sf::Color::Black);
+        window.draw(searchOption);
+        window.draw(sortOption);
+        window.draw(exitOption);
         window.display();
     }
 
-    return EXIT_SUCCESS;
+    return 0;
 }
