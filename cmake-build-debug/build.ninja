@@ -119,6 +119,34 @@ build CMakeFiles/Proyecto.dir/QuickSort.cpp.obj: CXX_COMPILER__Proyecto_unscanne
   OBJECT_DIR = CMakeFiles\Proyecto.dir
   OBJECT_FILE_DIR = CMakeFiles\Proyecto.dir
 
+build CMakeFiles/Proyecto.dir/LinearStructureMenu.cpp.obj: CXX_COMPILER__Proyecto_unscanned_Debug C$:/Users/frpat/CLionProjects/Proyecto/Proyecto/LinearStructureMenu.cpp || cmake_object_order_depends_target_Proyecto
+  DEP_FILE = CMakeFiles\Proyecto.dir\LinearStructureMenu.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -isystem "C:/Users/frpat/Downloads/SFML-2.6.2-windows-gcc-13.1.0-mingw-64-bit (1)/SFML-2.6.2/include"
+  OBJECT_DIR = CMakeFiles\Proyecto.dir
+  OBJECT_FILE_DIR = CMakeFiles\Proyecto.dir
+
+build CMakeFiles/Proyecto.dir/StackMenu.cpp.obj: CXX_COMPILER__Proyecto_unscanned_Debug C$:/Users/frpat/CLionProjects/Proyecto/Proyecto/StackMenu.cpp || cmake_object_order_depends_target_Proyecto
+  DEP_FILE = CMakeFiles\Proyecto.dir\StackMenu.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -isystem "C:/Users/frpat/Downloads/SFML-2.6.2-windows-gcc-13.1.0-mingw-64-bit (1)/SFML-2.6.2/include"
+  OBJECT_DIR = CMakeFiles\Proyecto.dir
+  OBJECT_FILE_DIR = CMakeFiles\Proyecto.dir
+
+build CMakeFiles/Proyecto.dir/QueueMenu.cpp.obj: CXX_COMPILER__Proyecto_unscanned_Debug C$:/Users/frpat/CLionProjects/Proyecto/Proyecto/QueueMenu.cpp || cmake_object_order_depends_target_Proyecto
+  DEP_FILE = CMakeFiles\Proyecto.dir\QueueMenu.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -isystem "C:/Users/frpat/Downloads/SFML-2.6.2-windows-gcc-13.1.0-mingw-64-bit (1)/SFML-2.6.2/include"
+  OBJECT_DIR = CMakeFiles\Proyecto.dir
+  OBJECT_FILE_DIR = CMakeFiles\Proyecto.dir
+
+build CMakeFiles/Proyecto.dir/LinkedListMenu.cpp.obj: CXX_COMPILER__Proyecto_unscanned_Debug C$:/Users/frpat/CLionProjects/Proyecto/Proyecto/LinkedListMenu.cpp || cmake_object_order_depends_target_Proyecto
+  DEP_FILE = CMakeFiles\Proyecto.dir\LinkedListMenu.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -isystem "C:/Users/frpat/Downloads/SFML-2.6.2-windows-gcc-13.1.0-mingw-64-bit (1)/SFML-2.6.2/include"
+  OBJECT_DIR = CMakeFiles\Proyecto.dir
+  OBJECT_FILE_DIR = CMakeFiles\Proyecto.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Proyecto
@@ -127,7 +155,7 @@ build CMakeFiles/Proyecto.dir/QuickSort.cpp.obj: CXX_COMPILER__Proyecto_unscanne
 #############################################
 # Link the executable Proyecto.exe
 
-build Proyecto.exe: CXX_EXECUTABLE_LINKER__Proyecto_Debug CMakeFiles/Proyecto.dir/main.cpp.obj CMakeFiles/Proyecto.dir/SearchMenu.cpp.obj CMakeFiles/Proyecto.dir/LinearSearch.cpp.obj CMakeFiles/Proyecto.dir/BinarySearch.cpp.obj CMakeFiles/Proyecto.dir/SortMenu.cpp.obj CMakeFiles/Proyecto.dir/BubbleSort.cpp.obj CMakeFiles/Proyecto.dir/SelectionSort.cpp.obj CMakeFiles/Proyecto.dir/InsertionSort.cpp.obj CMakeFiles/Proyecto.dir/MergeSort.cpp.obj CMakeFiles/Proyecto.dir/QuickSort.cpp.obj | C$:/Users/frpat/Downloads/SFML-2.6.2-windows-gcc-13.1.0-mingw-64-bit$ (1)/SFML-2.6.2/lib/libsfml-graphics-d.a C$:/Users/frpat/Downloads/SFML-2.6.2-windows-gcc-13.1.0-mingw-64-bit$ (1)/SFML-2.6.2/lib/libsfml-window-d.a C$:/Users/frpat/Downloads/SFML-2.6.2-windows-gcc-13.1.0-mingw-64-bit$ (1)/SFML-2.6.2/lib/libsfml-system-d.a
+build Proyecto.exe: CXX_EXECUTABLE_LINKER__Proyecto_Debug CMakeFiles/Proyecto.dir/main.cpp.obj CMakeFiles/Proyecto.dir/SearchMenu.cpp.obj CMakeFiles/Proyecto.dir/LinearSearch.cpp.obj CMakeFiles/Proyecto.dir/BinarySearch.cpp.obj CMakeFiles/Proyecto.dir/SortMenu.cpp.obj CMakeFiles/Proyecto.dir/BubbleSort.cpp.obj CMakeFiles/Proyecto.dir/SelectionSort.cpp.obj CMakeFiles/Proyecto.dir/InsertionSort.cpp.obj CMakeFiles/Proyecto.dir/MergeSort.cpp.obj CMakeFiles/Proyecto.dir/QuickSort.cpp.obj CMakeFiles/Proyecto.dir/LinearStructureMenu.cpp.obj CMakeFiles/Proyecto.dir/StackMenu.cpp.obj CMakeFiles/Proyecto.dir/QueueMenu.cpp.obj CMakeFiles/Proyecto.dir/LinkedListMenu.cpp.obj | C$:/Users/frpat/Downloads/SFML-2.6.2-windows-gcc-13.1.0-mingw-64-bit$ (1)/SFML-2.6.2/lib/libsfml-graphics-d.a C$:/Users/frpat/Downloads/SFML-2.6.2-windows-gcc-13.1.0-mingw-64-bit$ (1)/SFML-2.6.2/lib/libsfml-window-d.a C$:/Users/frpat/Downloads/SFML-2.6.2-windows-gcc-13.1.0-mingw-64-bit$ (1)/SFML-2.6.2/lib/libsfml-system-d.a
   FLAGS = -g
   LINK_LIBRARIES = "C:/Users/frpat/Downloads/SFML-2.6.2-windows-gcc-13.1.0-mingw-64-bit (1)/SFML-2.6.2/lib/libsfml-graphics-d.a"  "C:/Users/frpat/Downloads/SFML-2.6.2-windows-gcc-13.1.0-mingw-64-bit (1)/SFML-2.6.2/lib/libsfml-window-d.a"  "C:/Users/frpat/Downloads/SFML-2.6.2-windows-gcc-13.1.0-mingw-64-bit (1)/SFML-2.6.2/lib/libsfml-system-d.a"  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Proyecto.dir

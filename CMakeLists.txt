@@ -30,7 +30,17 @@ add_executable(Proyecto main.cpp
         InsertionSort.cpp
         InsertionSort.cpp
         MergeSort.cpp
-        QuickSort.cpp)
+        QuickSort.cpp
+        LinearStructureMenu.h
+        LinearStructureMenu.cpp
+        StackMenu.h
+        StackMenu.cpp
+        QueueMenu.h
+        QueueMenu.h
+        QueueMenu.cpp
+        QueueMenu.cpp
+        LinkedListMenu.h
+        LinkedListMenu.cpp)
 
 # Link SFML libraries
 target_link_libraries(Proyecto sfml-system sfml-window sfml-graphics)
